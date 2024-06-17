@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Paleta de Colores</title>
+  <style>
+    #paleta div {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="paleta">
+    <div style="background-color: red;" onclick="cambiarColor('red')"></div>
+    <div style="background-color: green;" onclick="cambiarColor('green')"></div>
+    <div style="background-color: blue;" onclick="cambiarColor('blue')"></div>
+    <div style="background-color: yellow;" onclick="cambiarColor('yellow')"></div>
+    <div style="background-color: purple;" onclick="cambiarColor('purple')"></div>
+  </div>
+
+  <script>
+    function cambiarColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

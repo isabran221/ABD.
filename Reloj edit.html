@@ -1,0 +1,14 @@
+<html>
+   
+        <input type="text" id="reloj">
+
+<script>
+function actualizarReloj() {
+  document.getElementById('reloj').value = new Date().toLocaleTimeString();
+  setTimeout(actualizarReloj, 1000);
+}
+window.onload = actualizarReloj;
+</script>
+
+   
+</html>

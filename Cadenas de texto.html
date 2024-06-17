@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estadísticas de Texto</title>
+</head>
+<body>
+  <form id="textoForm">
+    <textarea id="texto" placeholder="Introduce texto" rows="4" cols="50"></textarea><br>
+    <button type="button" onclick="procesarTexto()">Procesar</button>
+  </form>
+  <pre id="resultado"></pre>
+
+  <script>
+    function procesarTexto() {
+      var texto = document.getElementById('texto').value;
+      var letras = {};
+      for (var i = 0; i < texto.length; i++) {
+        var letra = texto[i];
+        if (letras[letra]) {
+          letras[letra]++;
+        } else {
+          letras[letra] = 1;
+        }
+      }
+      var resultado = JSON.stringify(letras, null, 2);
+      document.getElementById('resultado').innerText = resultado;
+    }
+  </script>
+</body>
+</html>

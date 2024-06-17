@@ -1,0 +1,25 @@
+<html>
+    
+        <form id="testForm">
+  <input type="radio" id="opcion1" name="opcion" value="Opción 1">
+  <label for="opcion1">Opción 1</label><br>
+  <input type="radio" id="opcion2" name="opcion" value="Opción 2">
+  <label for="opcion2">Opción 2</label><br>
+  <input type="radio" id="opcion3" name="opcion" value="Opción 3">
+  <label for="opcion3">Opción 3</label><br>
+  <button type="button" onclick="evaluar()">Evaluar</button>
+</form>
+
+<script>
+function evaluar() {
+  var opciones = document.getElementsByName('opcion');
+  for(var i = 0; i < opciones.length; i++) {
+    if(opciones[i].checked) {
+      alert('Has seleccionado ' + opciones[i].value);
+    }
+  }
+}
+</script>
+
+    
+</html>

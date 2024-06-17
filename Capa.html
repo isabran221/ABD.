@@ -1,0 +1,13 @@
+<html>
+    <div id="capa" style="position:absolute"><img src="imagen.jpg"></div>
+
+    <script>
+    document.onmousemove = function(e) {
+      var x = e.pageX;
+      var y = e.pageY;
+      document.getElementById('capa').style.left = x + 'px';
+      document.getElementById('capa').style.top = y + 'px';
+    }
+    </script>
+    
+</html>

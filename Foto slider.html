@@ -1,0 +1,21 @@
+<html>
+    <div id="slider">
+        <img src="foto1.jpg" class="foto">
+        <img src="foto2.jpg" class="foto" style="display:none">
+        <img src="foto3.jpg" class="foto" style="display:none">
+      </div>
+      <button onclick="siguienteFoto()">Siguiente foto</button>
+      
+      <script>
+      var fotos = document.getElementsByClassName('foto');
+      var fotoActual = 0;
+      function siguienteFoto() {
+        fotos[fotoActual].style.display = 'none';
+        fotoActual = (fotoActual + 1) % fotos.length;
+        fotos[fotoActual].style.display = 'block';
+      }
+      </script>
+      
+      
+      
+</html>

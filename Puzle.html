@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle 4x4</title>
+  <style>
+    table { border-spacing: 0; }
+    td { width: 100px; height: 100px; border: 1px solid black; text-align: center; font-size: 24px; }
+  </style>
+</head>
+<body>
+  <table id="puzzle">
+    <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+    <tr><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+    <tr><td>13</td><td>14</td><td>15</td><td></td></tr>
+  </table>
+
+  <script>
+    const puzzle = document.getElementById('puzzle');
+    let emptyCell = { row: 3, col: 3 };
+
+    puzzle.addEventListener('click', (e) => {
+      const cell = e.target;
+      const row = cell.parentElement.rowIndex;
+      const col = cell.cellIndex;
+
+      if (isValidMove(row, col)) {
+        moveCell(cell, row, col);
+      }
+    });
+
+    function isValidMove(row, col) {
+      const rowDiff = Math.abs(row - emptyCell.row);
+      const colDiff = Math.abs(col - emptyCell.col);
+      return (rowDiff + colDiff === 1);
+    }
+
+    function moveCell(cell, row, col) {
+      puzzle.rows[emptyCell.row].cells[emptyCell.col].innerHTML = cell.innerHTML;
+      cell.innerHTML = '';
+      emptyCell = { row, col };
+    }
+  </script>
+</body>
+</html>

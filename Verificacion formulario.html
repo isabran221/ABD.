@@ -1,0 +1,18 @@
+<html>
+    <form id="verificacionForm">
+        <input type="number" id="numero" min="1" max="100" placeholder="Introduce un número entre 1 y 100">
+        <button type="button" onclick="verificar()">Verificar</button>
+      </form>
+      
+      <script>
+      function verificar() {
+        var numero = document.getElementById('numero').value;
+        if(numero >= 1 && numero <= 100) {
+          alert('El número está en el rango correcto');
+        } else {
+          alert('El número no está en el rango correcto');
+        }
+      }
+      </script>
+      
+</html>

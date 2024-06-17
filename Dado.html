@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lanzar Dado</title>
+</head>
+<body>
+  <button onclick="lanzarDado()">Lanzar dado</button>
+  <p id="resultado"></p>
+
+  <script>
+    function lanzarDado() {
+      var resultado = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('resultado').innerText = 'Has sacado un ' + resultado;
+    }
+  </script>
+</body>
+</html>

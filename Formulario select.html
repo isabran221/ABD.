@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Select</title>
+</head>
+<body>
+  <select id="select">
+    <option value="opcion1">Opción 1</option>
+    <option value="opcion2">Opción 2</option>
+  </select>
+  <input type="text" id="nuevoValor" placeholder="Nuevo valor">
+  <button onclick="añadir()">Añadir</button>
+  <button onclick="borrar()">Borrar</button>
+  <button onclick="modificar()">Modificar</button>
+
+  <script>
+    function añadir() {
+      var select = document.getElementById('select');
+      var option = document.createElement('option');
+      var nuevoValor = document.getElementById('nuevoValor').value;
+      option.text = nuevoValor || 'Nueva opción';
+      option.value = nuevoValor.toLowerCase().replace(/\s+/g, '');
+      select.add(option);
+    }
+
+    function borrar() {
+      var select = document.getElementById('select');
+      select.remove(select.selectedIndex);
+    }
+
+    function modificar() {
+      var select = document.getElementById('select');
+      var nuevoValor = document.getElementById('nuevoValor').value;
+      select.options[select.selectedIndex].text = nuevoValor || 'Opción modificada';
+    }
+  </script>
+</body>
+</html>

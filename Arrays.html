@@ -1,0 +1,21 @@
+<html>
+    <form id="textoForm">
+        <input type="text" id="texto" placeholder="Introduce texto">
+        <button type="button" onclick="procesarTexto()">Procesar</button>
+      </form>
+      
+      <script>
+      function procesarTexto() {
+        var texto = document.getElementById('texto').value;
+        var palabras = texto.split(' ');
+        var numPalabras = palabras.length;
+        var primeraPalabra = palabras[0];
+        var ultimaPalabra = palabras[numPalabras - 1];
+        var palabrasInverso = palabras.slice().reverse();
+        var palabrasAZ = palabras.slice().sort();
+        var palabrasZA = palabras.slice().sort().reverse();
+        alert('Número de palabras: ' + numPalabras + '\nPrimera palabra: ' + primeraPalabra + '\nÚltima palabra: ' + ultimaPalabra + '\nPalabras en orden inverso: ' + palabrasInverso.join(' ') + '\nPalabras de la A a la Z: ' + palabrasAZ.join(' ') + '\nPalabras de la Z a la A: ' + palabrasZA.join(' '));
+      }
+      </script>
+      
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Posición y Tamaño de Ventana</title>
+</head>
+<body>
+  <form>
+    <label for="ancho">Ancho:</label>
+    <input type="number" id="ancho" value="200"><br>
+    <label for="alto">Alto:</label>
+    <input type="number" id="alto" value="200"><br>
+    <label for="posX">Posición X:</label>
+    <input type="number" id="posX" value="100"><br>
+    <label for="posY">Posición Y:</label>
+    <input type="number" id="posY" value="100"><br>
+    <button type="button" onclick="abrirVentana()">Abrir ventana</button>
+  </form>
+
+  <script>
+    function abrirVentana() {
+      var ancho = document.getElementById('ancho').value;
+      var alto = document.getElementById('alto').value;
+      var posX = document.getElementById('posX').value;
+      var posY = document.getElementById('posY').value;
+      window.open('about:blank', 'Nueva ventana', `width=${ancho},height=${alto},left=${posX},top=${posY}`);
+    }
+  </script>
+</body>
+</html>

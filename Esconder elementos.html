@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Esconder Elementos</title>
+  <style>
+    #texto { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <p id="texto" onmouseover="esconder()" onclick="mostrar()">Pasa el ratón por aquí</p>
+
+  <script>
+    function esconder() {
+      document.getElementById('texto').style.visibility = 'hidden';
+    }
+
+    function mostrar() {
+      document.getElementById('texto').style.visibility = 'visible';
+    }
+  </script>
+</body>
+</html>

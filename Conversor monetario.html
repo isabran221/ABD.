@@ -1,0 +1,23 @@
+<html>
+    
+        <form id="conversor">
+  <input type="number" id="euros" placeholder="Euros">
+  <input type="number" id="pesetas" placeholder="Pesetas">
+  <button type="button" onclick="convertir()">Convertir</button>
+  <button type="reset">Limpiar</button>
+</form>
+
+<script>
+function convertir() {
+  var euros = document.getElementById('euros').value;
+  var pesetas = document.getElementById('pesetas').value;
+  if(euros) {
+    document.getElementById('pesetas').value = euros * 166.386;
+  } else if(pesetas) {
+    document.getElementById('euros').value = pesetas / 166.386;
+  }
+}
+
+
+    </script>
+</html>

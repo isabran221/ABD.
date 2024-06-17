@@ -1,0 +1,29 @@
+<html>
+
+<div id="cara">
+    <div id="ojoIzquierdo" class="ojo"></div>
+    <div id="ojoDerecho" class="ojo"></div>
+  </div>
+  
+  <script>
+  document.onmousemove = function(e) {
+    var x = e.pageX;
+    var y = e.pageY;
+    moverOjo(document.getElementById('ojoIzquierdo'), x, y);
+    moverOjo(document.getElementById('ojoDerecho'), x, y);
+  }
+  function moverOjo(ojo, x, y) {
+    var cara = document.getElementById('cara');
+    var caraRect = cara.getBoundingClientRect();
+    var ojoRect = ojo.getBoundingClientRect();
+    var dx = x - (ojoRect.left + ojoRect.width / 2);
+    var dy = y - (ojoRect.top + ojoRect.height / 2);
+    var angulo = Math.atan2(dy, dx);
+    var distancia = Math.min(10, Math.sqrt(dx * dx + dy * dy));
+    ojo.style.left = (caraRect.width / 2 + distancia * Math.cos(angulo) - ojoRect.width / 2) + 'px';
+    ojo.style.top = (caraRect.height / 2 + distancia * Math.sin(angulo) - ojoRect.height / 2) + 'px';
+  }
+  </script>
+  
+
+</html>
